@@ -10,6 +10,12 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)getAllVariable:(UIButton *)sender;
+- (IBAction)getAllMethod:(UIButton *)sender;
+- (IBAction)changeVariable:(UIButton *)sender;
+- (IBAction)addMethod:(UIButton *)sender;
+- (IBAction)replaceMethod:(UIButton *)sender;
+- (IBAction)addVariable:(UIButton *)sender;
 
 @end
 

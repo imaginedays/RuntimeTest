@@ -13,6 +13,8 @@
 		42542F082050DF930032F098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42542F072050DF930032F098 /* Assets.xcassets */; };
 		42542F0B2050DF930032F098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42542F092050DF930032F098 /* LaunchScreen.storyboard */; };
 		42542F0E2050DF930032F098 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42542F0D2050DF930032F098 /* main.m */; };
+		42542F1620510EFD0032F098 /* person.m in Sources */ = {isa = PBXBuildFile; fileRef = 42542F1520510EFD0032F098 /* person.m */; };
+		42542F19205130610032F098 /* person+PersonCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 42542F18205130610032F098 /* person+PersonCategory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		42542F0A2050DF930032F098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42542F0C2050DF930032F098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42542F0D2050DF930032F098 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42542F1420510EFD0032F098 /* person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = person.h; sourceTree = "<group>"; };
+		42542F1520510EFD0032F098 /* person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = person.m; sourceTree = "<group>"; };
+		42542F17205130610032F098 /* person+PersonCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "person+PersonCategory.h"; sourceTree = "<group>"; };
+		42542F18205130610032F098 /* person+PersonCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "person+PersonCategory.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				42542F092050DF930032F098 /* LaunchScreen.storyboard */,
 				42542F0C2050DF930032F098 /* Info.plist */,
 				42542F0D2050DF930032F098 /* main.m */,
+				42542F1420510EFD0032F098 /* person.h */,
+				42542F1520510EFD0032F098 /* person.m */,
+				42542F17205130610032F098 /* person+PersonCategory.h */,
+				42542F18205130610032F098 /* person+PersonCategory.m */,
 			);
 			path = RuntimeTest;
 			sourceTree = "<group>";
@@ -142,8 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42542F19205130610032F098 /* person+PersonCategory.m in Sources */,
 				42542F032050DF930032F098 /* ViewController.m in Sources */,
 				42542F0E2050DF930032F098 /* main.m in Sources */,
+				42542F1620510EFD0032F098 /* person.m in Sources */,
 				42542F002050DF930032F098 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +294,7 @@
 				DEVELOPMENT_TEAM = 35PWMCP87E;
 				INFOPLIST_FILE = RuntimeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.imaginedays.RuntimeTest;
+				PRODUCT_BUNDLE_IDENTIFIER = org.imaginedays.runtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -296,7 +308,7 @@
 				DEVELOPMENT_TEAM = 35PWMCP87E;
 				INFOPLIST_FILE = RuntimeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.imaginedays.RuntimeTest;
+				PRODUCT_BUNDLE_IDENTIFIER = org.imaginedays.runtime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

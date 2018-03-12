@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,81 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwS-OB-x9p">
+                                <rect key="frame" x="0.0" y="60" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="获取所有变量"/>
+                                <connections>
+                                    <action selector="getAllVariable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xKe-Mi-o13"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Ws-Gcf">
+                                <rect key="frame" x="0.0" y="110" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="获取所有方法"/>
+                                <connections>
+                                    <action selector="getAllMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZY5-4p-JOE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4Y-lM-rWa">
+                                <rect key="frame" x="0.0" y="160" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="改变私有变量name的值"/>
+                                <connections>
+                                    <action selector="changeVariable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jES-m6-KaO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76N-9M-dVJ">
+                                <rect key="frame" x="0.0" y="210" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="添加一个新属性"/>
+                                <connections>
+                                    <action selector="addVariable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEa-Fk-KBq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdf-Ya-QDz">
+                                <rect key="frame" x="0.0" y="260" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="添加一个新方法"/>
+                                <connections>
+                                    <action selector="addMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Ne-IH-xbV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyn-A1-Fsb">
+                                <rect key="frame" x="0.0" y="310" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="交换2个方法功能之后"/>
+                                <connections>
+                                    <action selector="replaceMethod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qRr-Li-LYX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nyn-A1-Fsb" firstAttribute="top" secondItem="Sdf-Ya-QDz" secondAttribute="bottom" constant="20" id="3i3-o1-NxG"/>
+                            <constraint firstItem="D4Y-lM-rWa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="G5k-4D-GfK"/>
+                            <constraint firstItem="D4Y-lM-rWa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IC3-eu-fvV"/>
+                            <constraint firstItem="jwS-OB-x9p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IMa-dD-wdY"/>
+                            <constraint firstItem="9Gu-Ws-Gcf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IxG-R5-9H8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jwS-OB-x9p" secondAttribute="trailing" id="NIy-uy-K4n"/>
+                            <constraint firstItem="nyn-A1-Fsb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PAz-aE-DCI"/>
+                            <constraint firstItem="Sdf-Ya-QDz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VN1-TN-4Cn"/>
+                            <constraint firstItem="D4Y-lM-rWa" firstAttribute="top" secondItem="9Gu-Ws-Gcf" secondAttribute="bottom" constant="20" id="WOd-ZR-qOE"/>
+                            <constraint firstItem="jwS-OB-x9p" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="dZt-Hx-VLl"/>
+                            <constraint firstItem="76N-9M-dVJ" firstAttribute="top" secondItem="D4Y-lM-rWa" secondAttribute="bottom" constant="20" id="frU-1Z-ffp"/>
+                            <constraint firstItem="Sdf-Ya-QDz" firstAttribute="top" secondItem="76N-9M-dVJ" secondAttribute="bottom" constant="20" id="hGk-rc-uzl"/>
+                            <constraint firstItem="Sdf-Ya-QDz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hUd-UZ-pcx"/>
+                            <constraint firstItem="9Gu-Ws-Gcf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nUr-8C-ThG"/>
+                            <constraint firstItem="nyn-A1-Fsb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vG2-qj-kCO"/>
+                            <constraint firstItem="9Gu-Ws-Gcf" firstAttribute="top" secondItem="jwS-OB-x9p" secondAttribute="bottom" constant="20" id="y0T-ge-spH"/>
+                            <constraint firstItem="76N-9M-dVJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yiN-jH-SHB"/>
+                            <constraint firstItem="76N-9M-dVJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zG4-bM-qHa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
