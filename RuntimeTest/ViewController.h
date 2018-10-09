@@ -16,6 +16,7 @@
 - (IBAction)addMethod:(UIButton *)sender;
 - (IBAction)replaceMethod:(UIButton *)sender;
 - (IBAction)addVariable:(UIButton *)sender;
+- (IBAction)NullSafe:(UIButton *)sender;
 
 @end
 

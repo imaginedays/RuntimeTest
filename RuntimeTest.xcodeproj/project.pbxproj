@@ -15,6 +15,7 @@
 		42542F0E2050DF930032F098 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42542F0D2050DF930032F098 /* main.m */; };
 		42542F1620510EFD0032F098 /* person.m in Sources */ = {isa = PBXBuildFile; fileRef = 42542F1520510EFD0032F098 /* person.m */; };
 		42542F19205130610032F098 /* person+PersonCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 42542F18205130610032F098 /* person+PersonCategory.m */; };
+		768DC9FA216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DC9F9216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		42542F1520510EFD0032F098 /* person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = person.m; sourceTree = "<group>"; };
 		42542F17205130610032F098 /* person+PersonCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "person+PersonCategory.h"; sourceTree = "<group>"; };
 		42542F18205130610032F098 /* person+PersonCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "person+PersonCategory.m"; sourceTree = "<group>"; };
+		768DC9F8216C5BF1005CC557 /* NSMutableDictionary+NullSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NullSafe.h"; sourceTree = "<group>"; };
+		768DC9F9216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+NullSafe.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 		42542EFD2050DF930032F098 /* RuntimeTest */ = {
 			isa = PBXGroup;
 			children = (
+				768DC9F7216C5B96005CC557 /* Category */,
 				42542EFE2050DF930032F098 /* AppDelegate.h */,
 				42542EFF2050DF930032F098 /* AppDelegate.m */,
 				42542F012050DF930032F098 /* ViewController.h */,
@@ -79,6 +83,15 @@
 				42542F18205130610032F098 /* person+PersonCategory.m */,
 			);
 			path = RuntimeTest;
+			sourceTree = "<group>";
+		};
+		768DC9F7216C5B96005CC557 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				768DC9F8216C5BF1005CC557 /* NSMutableDictionary+NullSafe.h */,
+				768DC9F9216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42542F19205130610032F098 /* person+PersonCategory.m in Sources */,
+				768DC9FA216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m in Sources */,
 				42542F032050DF930032F098 /* ViewController.m in Sources */,
 				42542F0E2050DF930032F098 /* main.m in Sources */,
 				42542F1620510EFD0032F098 /* person.m in Sources */,
@@ -291,7 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35PWMCP87E;
+				DEVELOPMENT_TEAM = 693F536PET;
 				INFOPLIST_FILE = RuntimeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.imaginedays.runtime;
@@ -305,7 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35PWMCP87E;
+				DEVELOPMENT_TEAM = 693F536PET;
 				INFOPLIST_FILE = RuntimeTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.imaginedays.runtime;

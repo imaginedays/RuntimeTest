@@ -91,4 +91,10 @@ int myAddingFunction(id self, SEL _cmd)
     per.height = 12;
     NSLog(@"%f",[per height]);
 }
+
+- (IBAction)NullSafe:(UIButton *)sender {
+    id obj = nil;
+    NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
+    [mDic setObject:obj forKey:@"666"];
+}
 @end
