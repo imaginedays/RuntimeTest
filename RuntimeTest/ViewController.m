@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import <objc/runtime.h>
 #import "person+PersonCategory.h"
+#import "EmptyClass.h"
+#import "FatherClass.h"
+#import "SonClass.h"
 
 @interface ViewController ()
 
@@ -96,5 +99,11 @@ int myAddingFunction(id self, SEL _cmd)
     id obj = nil;
     NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
     [mDic setObject:obj forKey:@"666"];
+    
+    EmptyClass *instance = [[EmptyClass alloc]init];
+    [instance performSelector:@selector(sayHello2)];
+    FatherClass *f = [FatherClass new];
+    SonClass *s = [SonClass new];
+    
 }
 @end

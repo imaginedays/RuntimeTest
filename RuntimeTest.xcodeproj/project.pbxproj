@@ -16,6 +16,11 @@
 		42542F1620510EFD0032F098 /* person.m in Sources */ = {isa = PBXBuildFile; fileRef = 42542F1520510EFD0032F098 /* person.m */; };
 		42542F19205130610032F098 /* person+PersonCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 42542F18205130610032F098 /* person+PersonCategory.m */; };
 		768DC9FA216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DC9F9216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m */; };
+		768DC9FE216C9911005CC557 /* EmptyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DC9FD216C9911005CC557 /* EmptyClass.m */; };
+		768DCA02216CB073005CC557 /* FatherClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DCA01216CB073005CC557 /* FatherClass.m */; };
+		768DCA05216CB090005CC557 /* SonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DCA04216CB090005CC557 /* SonClass.m */; };
+		768DCA08216CB263005CC557 /* FatherClass+AgeL.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DCA07216CB263005CC557 /* FatherClass+AgeL.m */; };
+		768DCA0B216CB278005CC557 /* SonClass+AgeS.m in Sources */ = {isa = PBXBuildFile; fileRef = 768DCA0A216CB278005CC557 /* SonClass+AgeS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,16 @@
 		42542F18205130610032F098 /* person+PersonCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "person+PersonCategory.m"; sourceTree = "<group>"; };
 		768DC9F8216C5BF1005CC557 /* NSMutableDictionary+NullSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NullSafe.h"; sourceTree = "<group>"; };
 		768DC9F9216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+NullSafe.m"; sourceTree = "<group>"; };
+		768DC9FC216C9911005CC557 /* EmptyClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmptyClass.h; sourceTree = "<group>"; };
+		768DC9FD216C9911005CC557 /* EmptyClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmptyClass.m; sourceTree = "<group>"; };
+		768DCA00216CB073005CC557 /* FatherClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FatherClass.h; sourceTree = "<group>"; };
+		768DCA01216CB073005CC557 /* FatherClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FatherClass.m; sourceTree = "<group>"; };
+		768DCA03216CB090005CC557 /* SonClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SonClass.h; sourceTree = "<group>"; };
+		768DCA04216CB090005CC557 /* SonClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SonClass.m; sourceTree = "<group>"; };
+		768DCA06216CB263005CC557 /* FatherClass+AgeL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FatherClass+AgeL.h"; sourceTree = "<group>"; };
+		768DCA07216CB263005CC557 /* FatherClass+AgeL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FatherClass+AgeL.m"; sourceTree = "<group>"; };
+		768DCA09216CB278005CC557 /* SonClass+AgeS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SonClass+AgeS.h"; sourceTree = "<group>"; };
+		768DCA0A216CB278005CC557 /* SonClass+AgeS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SonClass+AgeS.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +82,8 @@
 		42542EFD2050DF930032F098 /* RuntimeTest */ = {
 			isa = PBXGroup;
 			children = (
+				768DC9FF216CB028005CC557 /* Load_initialize */,
+				768DC9FB216C98F5005CC557 /* Test */,
 				768DC9F7216C5B96005CC557 /* Category */,
 				42542EFE2050DF930032F098 /* AppDelegate.h */,
 				42542EFF2050DF930032F098 /* AppDelegate.m */,
@@ -77,10 +94,6 @@
 				42542F092050DF930032F098 /* LaunchScreen.storyboard */,
 				42542F0C2050DF930032F098 /* Info.plist */,
 				42542F0D2050DF930032F098 /* main.m */,
-				42542F1420510EFD0032F098 /* person.h */,
-				42542F1520510EFD0032F098 /* person.m */,
-				42542F17205130610032F098 /* person+PersonCategory.h */,
-				42542F18205130610032F098 /* person+PersonCategory.m */,
 			);
 			path = RuntimeTest;
 			sourceTree = "<group>";
@@ -92,6 +105,34 @@
 				768DC9F9216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		768DC9FB216C98F5005CC557 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				42542F1420510EFD0032F098 /* person.h */,
+				42542F1520510EFD0032F098 /* person.m */,
+				42542F17205130610032F098 /* person+PersonCategory.h */,
+				42542F18205130610032F098 /* person+PersonCategory.m */,
+				768DC9FC216C9911005CC557 /* EmptyClass.h */,
+				768DC9FD216C9911005CC557 /* EmptyClass.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		768DC9FF216CB028005CC557 /* Load_initialize */ = {
+			isa = PBXGroup;
+			children = (
+				768DCA00216CB073005CC557 /* FatherClass.h */,
+				768DCA01216CB073005CC557 /* FatherClass.m */,
+				768DCA03216CB090005CC557 /* SonClass.h */,
+				768DCA04216CB090005CC557 /* SonClass.m */,
+				768DCA06216CB263005CC557 /* FatherClass+AgeL.h */,
+				768DCA07216CB263005CC557 /* FatherClass+AgeL.m */,
+				768DCA09216CB278005CC557 /* SonClass+AgeS.h */,
+				768DCA0A216CB278005CC557 /* SonClass+AgeS.m */,
+			);
+			path = Load_initialize;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,12 +206,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768DCA02216CB073005CC557 /* FatherClass.m in Sources */,
 				42542F19205130610032F098 /* person+PersonCategory.m in Sources */,
 				768DC9FA216C5BF1005CC557 /* NSMutableDictionary+NullSafe.m in Sources */,
 				42542F032050DF930032F098 /* ViewController.m in Sources */,
+				768DC9FE216C9911005CC557 /* EmptyClass.m in Sources */,
 				42542F0E2050DF930032F098 /* main.m in Sources */,
+				768DCA0B216CB278005CC557 /* SonClass+AgeS.m in Sources */,
 				42542F1620510EFD0032F098 /* person.m in Sources */,
 				42542F002050DF930032F098 /* AppDelegate.m in Sources */,
+				768DCA05216CB090005CC557 /* SonClass.m in Sources */,
+				768DCA08216CB263005CC557 /* FatherClass+AgeL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
