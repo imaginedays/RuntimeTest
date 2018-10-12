@@ -10,6 +10,6 @@
 
 @implementation SonClass (AgeS)
 +(void)load {
-    NSLog(@"SonClass AgeS load");
+//    NSLog(@"SonClass AgeS load");
 }
 @end

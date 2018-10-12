@@ -9,7 +9,15 @@
 #import "FatherClass+AgeL.h"
 
 @implementation FatherClass (AgeL)
+
 +(void)load {
-    NSLog(@"FatherClass AgeL load");
+//    NSLog(@"FatherClass AgeL load");
 }
+
++(void)initialize {
+    if (self == [FatherClass self]) {
+//        NSLog(@"FatherClass AgeL initialize");
+    }
+}
+
 @end

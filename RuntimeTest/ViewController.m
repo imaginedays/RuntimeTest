@@ -12,6 +12,7 @@
 #import "EmptyClass.h"
 #import "FatherClass.h"
 #import "SonClass.h"
+#import "person.h"
 
 @interface ViewController ()
 
@@ -96,14 +97,52 @@ int myAddingFunction(id self, SEL _cmd)
 }
 
 - (IBAction)NullSafe:(UIButton *)sender {
-    id obj = nil;
-    NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
-    [mDic setObject:obj forKey:@"666"];
+//    id obj = nil;
+//    NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
+//    [mDic setObject:obj forKey:@"666"];
     
-    EmptyClass *instance = [[EmptyClass alloc]init];
-    [instance performSelector:@selector(sayHello2)];
-    FatherClass *f = [FatherClass new];
-    SonClass *s = [SonClass new];
+//    EmptyClass *instance = [[EmptyClass alloc]init];
+//    [instance performSelector:@selector(sayHello2)];
     
+//    FatherClass *f = [FatherClass new];
+//    SonClass *s = [SonClass new];
+//    person *p = [person new];
+//
+//    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//    [dic setObject:@"1" forKey:@"a"];
+//    [dic setObject:nil forKey:@"b"];
+    
+//    NSMutableString *mutableStr = [NSMutableString stringWithFormat:@"mutableStr"];
+//    NSString *copyStr = [mutableStr copy];
+//    NSLog(@"%@,%p",mutableStr,mutableStr);
+//    NSLog(@"%@,%p",copyStr,copyStr);
+//    [mutableStr appendString:@"hahaha"];
+//    NSLog(@"%@,%p",mutableStr,mutableStr);
+//    NSLog(@"%@,%p",copyStr,copyStr);
+    
+    NSArray *array = [NSArray arrayWithObjects:[NSMutableString stringWithString:@"first"],@"b",@"c",nil];
+    NSArray *deepCopyArray=[[NSArray alloc] initWithArray: array copyItems: YES];
+    NSArray* trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:
+                                  [NSKeyedArchiver archivedDataWithRootObject: array]];
+    
+    NSLog(@"array------------------------------");
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+         NSLog(@"%@,%p",obj,obj);
+    }];
+    
+    NSLog(@"deepCopyArray------------------------------");
+    [deepCopyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@,%p",obj,obj);
+    }];
+    
+    NSLog(@"trueDeepCopyArray------------------------------");
+    [trueDeepCopyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@,%p",obj,obj);
+    }];
+    
+    NSLog(@"point------------------------------");
+    NSLog(@"array = [%p]",array);
+    NSLog(@"deepCopyArray = [%p]",deepCopyArray);
+    NSLog(@"trueDeepCopyArray = [%p]",trueDeepCopyArray);
 }
 @end

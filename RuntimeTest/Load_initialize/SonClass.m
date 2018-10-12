@@ -11,7 +11,7 @@
 @implementation SonClass
 
 +(void)load {
-    NSLog(@"SonClass load");
+//    NSLog(@"SonClass load");
 }
 
 //+(void)initialize {

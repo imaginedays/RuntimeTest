@@ -11,12 +11,12 @@
 @implementation FatherClass
 
 +(void)load {
-    NSLog(@"FatherClass load");
+//    NSLog(@"FatherClass load");
 }
 
 +(void)initialize {
     if (self == [FatherClass self]) {
-      NSLog(@"FatherClass initialize");
+//      NSLog(@"FatherClass initialize");
     }
 }
 
