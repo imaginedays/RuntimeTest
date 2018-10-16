@@ -9,9 +9,22 @@
 #import "FatherClass.h"
 
 @implementation FatherClass
+@synthesize firstName = _firstName;
+@synthesize lastName = _lastName;
+
+-(instancetype)initFatherWithName:(NSString *)name {
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
 
 +(void)load {
 //    NSLog(@"FatherClass load");
+}
+
+-(NSString *)getMyFirstName {
+    return _firstName;
 }
 
 +(void)initialize {

@@ -14,9 +14,9 @@
 #import "SonClass.h"
 #import "person.h"
 
-@interface ViewController ()
+static void *EOCMyAlertViewKey = "EOCMyAlertViewKey";
 
-
+@interface ViewController ()<UIAlertViewDelegate>
 
 @end
 
@@ -104,7 +104,7 @@ int myAddingFunction(id self, SEL _cmd)
 //    EmptyClass *instance = [[EmptyClass alloc]init];
 //    [instance performSelector:@selector(sayHello2)];
     
-//    FatherClass *f = [FatherClass new];
+    FatherClass *f = [[FatherClass alloc]initFatherWithName:@"papa"];
 //    SonClass *s = [SonClass new];
 //    person *p = [person new];
 //
@@ -120,29 +120,60 @@ int myAddingFunction(id self, SEL _cmd)
 //    NSLog(@"%@,%p",mutableStr,mutableStr);
 //    NSLog(@"%@,%p",copyStr,copyStr);
     
-    NSArray *array = [NSArray arrayWithObjects:[NSMutableString stringWithString:@"first"],@"b",@"c",nil];
-    NSArray *deepCopyArray=[[NSArray alloc] initWithArray: array copyItems: YES];
-    NSArray* trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:
-                                  [NSKeyedArchiver archivedDataWithRootObject: array]];
+//    NSArray *array = [NSArray arrayWithObjects:[NSMutableString stringWithString:@"first"],@"b",@"c",nil];
+//    NSArray *deepCopyArray=[[NSArray alloc] initWithArray: array copyItems: YES];
+//    NSArray* trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:
+//                                  [NSKeyedArchiver archivedDataWithRootObject: array]];
+//
+//    NSLog(@"array------------------------------");
+//    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//         NSLog(@"%@,%p",obj,obj);
+//    }];
+//
+//    NSLog(@"deepCopyArray------------------------------");
+//    [deepCopyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        NSLog(@"%@,%p",obj,obj);
+//    }];
+//
+//    NSLog(@"trueDeepCopyArray------------------------------");
+//    [trueDeepCopyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        NSLog(@"%@,%p",obj,obj);
+//    }];
+//
+//    NSLog(@"point------------------------------");
+//    NSLog(@"array = [%p]",array);
+//    NSLog(@"deepCopyArray = [%p]",deepCopyArray);
+//    NSLog(@"trueDeepCopyArray = [%p]",trueDeepCopyArray);
     
-    NSLog(@"array------------------------------");
-    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-         NSLog(@"%@,%p",obj,obj);
-    }];
-    
-    NSLog(@"deepCopyArray------------------------------");
-    [deepCopyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"%@,%p",obj,obj);
-    }];
-    
-    NSLog(@"trueDeepCopyArray------------------------------");
-    [trueDeepCopyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSLog(@"%@,%p",obj,obj);
-    }];
-    
-    NSLog(@"point------------------------------");
-    NSLog(@"array = [%p]",array);
-    NSLog(@"deepCopyArray = [%p]",deepCopyArray);
-    NSLog(@"trueDeepCopyArray = [%p]",trueDeepCopyArray);
+    [self askUserAQuestion];
 }
+
+- (void)askUserAQuestion {
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Question" message:@"What do you want to do?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+    
+    void (^block)(NSInteger) = ^(NSInteger buttonIndex) {
+        if (buttonIndex == 0) {
+            [self doCancel];
+        }else {
+            [self doContinue];
+        }
+    };
+    
+    objc_setAssociatedObject(alert, EOCMyAlertViewKey, block, OBJC_ASSOCIATION_COPY);
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    void(^block)(NSInteger) = objc_getAssociatedObject(alertView, EOCMyAlertViewKey);
+    block(buttonIndex);
+}
+
+- (void)doCancel {
+    NSLog(@"doCancel");
+}
+
+- (void)doContinue {
+    NSLog(@"doContinue");
+}
+
 @end
