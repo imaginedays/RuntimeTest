@@ -13,6 +13,7 @@
 #import "FatherClass.h"
 #import "SonClass.h"
 #import "person.h"
+#import "Animal+Eat.h"
 
 static void *EOCMyAlertViewKey = "EOCMyAlertViewKey";
 
@@ -104,7 +105,7 @@ int myAddingFunction(id self, SEL _cmd)
 //    EmptyClass *instance = [[EmptyClass alloc]init];
 //    [instance performSelector:@selector(sayHello2)];
     
-    FatherClass *f = [[FatherClass alloc]initFatherWithName:@"papa"];
+//    FatherClass *f = [[FatherClass alloc]initFatherWithName:@"papa"];
 //    SonClass *s = [SonClass new];
 //    person *p = [person new];
 //
@@ -145,35 +146,69 @@ int myAddingFunction(id self, SEL _cmd)
 //    NSLog(@"deepCopyArray = [%p]",deepCopyArray);
 //    NSLog(@"trueDeepCopyArray = [%p]",trueDeepCopyArray);
     
-    [self askUserAQuestion];
-}
-
-- (void)askUserAQuestion {
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Question" message:@"What do you want to do?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+//    [self askUserAQuestion];
+//    [self respondsToSelector:@selector(helloword)];
     
-    void (^block)(NSInteger) = ^(NSInteger buttonIndex) {
-        if (buttonIndex == 0) {
-            [self doCancel];
-        }else {
-            [self doContinue];
-        }
-    };
-    
-    objc_setAssociatedObject(alert, EOCMyAlertViewKey, block, OBJC_ASSOCIATION_COPY);
-    [alert show];
+    Animal *a = [Animal new];
+//    [a shout];
+    [a rt_eat];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    void(^block)(NSInteger) = objc_getAssociatedObject(alertView, EOCMyAlertViewKey);
-    block(buttonIndex);
+//- (void)askUserAQuestion {
+//    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Question" message:@"What do you want to do?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Continue", nil];
+//
+//    void (^block)(NSInteger) = ^(NSInteger buttonIndex) {
+//        if (buttonIndex == 0) {
+//            [self doCancel];
+//        }else {
+//            [self doContinue];
+//        }
+//    };
+//
+//    objc_setAssociatedObject(alert, EOCMyAlertViewKey, block, OBJC_ASSOCIATION_COPY);
+//    [alert show];
+//}
+//
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    void(^block)(NSInteger) = objc_getAssociatedObject(alertView, EOCMyAlertViewKey);
+//    block(buttonIndex);
+//}
+//
+//- (void)doCancel {
+//    NSLog(@"doCancel");
+//}
+//
+//- (void)doContinue {
+//    NSLog(@"doContinue");
+//}
+
+void dynamicMethodIMP(id self, SEL _cmd) {
+    NSLog(@"dynamicMethodIMP");
 }
 
-- (void)doCancel {
-    NSLog(@"doCancel");
+#pragma mark 运行时第一步，询问当前接收者 处理sel
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    if (sel == @selector(helloword)) {
+        class_addMethod([self class], sel, (IMP)dynamicMethodIMP, "v@:");
+        return YES;
+    }
+    return [super resolveInstanceMethod:sel];
 }
 
-- (void)doContinue {
-    NSLog(@"doContinue");
++ (BOOL)resolveClassMethod:(SEL)sel {
+    return NO;
 }
+
+#pragma mark 第二步 能不能把这条消息给其他接收者来处理。
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    NSLog(@"forwardingTargetForSelector");
+    return nil;
+}
+
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
+    NSLog(@"forwardInvocation");
+}
+
+
 
 @end
